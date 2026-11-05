@@ -1,35 +1,24 @@
-// passing data from child to parent component
-import { useState } from "react";
-//  event handling -> onClick,onDnlclick,onKeyDown,onKeyUp,onSubmit,...
-//state variable
-const App = () => {
+import { useState } from "react"
 
-let [likes,setLikes]=useState(0);
-let [Dislike,setDislike]=useState(0);
+const App = () => { 
 
+const [likes,setLikes]   =   useState(0);
+const [Dislike,setDislikes] = useState(0);
 
-  const handleLike =() =>{
-    // increase the likes
-    setLikes(likes + 1);
-  }
-   const handleDislike =() =>{
+const handleLike = ()  => {
+setLikes(likes + 1)
+}
+const handleDislike = () =>{
+  setDislikes(Dislike + 1)
+}
 
-    // increase the likes
-    if(likes>0){
-   setDislike(Dislike+1);
-   }
-  }
-  // state variable re render working 
   return (
     <div>
-      <button onClick={handleLike}>
-       likes{likes}</button>
-        &nbsp;
-        <button onClick={handleDislike}>
-        Dislike{ Dislike }
-        </button>
-        
+    <button onClick={handleLike}>Likes{likes}</button>
+    &nbsp;
+      <button onClick={handleDislike}>Dislike{Dislike}</button>
     </div>
   )
 }
-export default App;
+
+export default App ;
